@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>005 Maths Game Quiz</title>
+    </head>
+    <body>
+
+        <div style="background-color:#ffffaa" align = "center">
+            <script>
+                var c = '';
+                var opt = '';
+                var n = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+
+                var quiz = {"count": 2, "next": null, "previous": null, "results": [{"_class": "assessment", "id": 746716, "assessment_type": "multiple-choice", "created": "2015-11-12T00:19:22Z", "prompt": {"feedbacks": ["", "", ""], "relatedLectureIds": "", "answers": ["document.getElementById(\"apple\").display = \"none\";   ", "document.getElementById(\"apple\").style.display = \"none\";   ", "document.getElementById(\"apple\").style= \"hidden\";   "], "question": "<p>How would you hide the element of id \"apple\" using Javascript Code</p>"}, "correct_response": ["b"], "updated": "2015-11-12T00:19:22Z", "section": "", "question_plain": "How would you hide the element of id \"apple\" using Javascript Code", "related_lectures": [], "original_assessment_id": 0}, {"_class": "assessment", "id": 746718, "assessment_type": "multiple-choice", "created": "2015-11-12T00:22:13Z", "prompt": {"feedbacks": ["", "", ""], "answers": ["answers.add(x);", "answers.push(x);", "answers.insert(x);"], "relatedLectureIds": "", "question": "<p>How would you add a variable x at the end of the array answers using Javascript code?</p>"}, "correct_response": ["b"], "updated": "2015-11-12T00:22:13Z", "section": "", "question_plain": "How would you add a variable x at the end of the array answers using Javascript code?", "related_lectures": [], "original_assessment_id": 0}]};
+
+                for (var i = 0; i < quiz.results.length; i++) {
+
+                    var question = '<font color="ff0000"><br><h3>Question-' + i + ': </h3> <b>' + quiz.results[i].prompt.question + '</b> <br>';
+
+                    for (var j = 0; j < quiz.results[i].prompt.answers.length; j++) {
+
+                        opt = opt.concat(quiz.results[i].prompt.answers[j] ? '<p style="cursor: pointer" onclick="this.style=\'font-weight: bold; color: #CE534D\'">' + n[j] + ': ' + quiz.results[i].prompt.answers[j].toString().replace(/,/g, '<br>') + '</p>' : '<br>');
+                    }
+                    var ans = quiz.results[i].correct_response ? '<p> <br> <input style="cursor: pointer" type="button" onclick="this.value=\'Answer is: ' + quiz.results[i].correct_response.toString() + '\'" value="Show Answer"></input> </p>' : '<br>';
+                    c = c.concat(question, opt, ans);
+                    opt = ''
+                    }
+                document.write(c);
+            </script>
+        </div>
+    </body>
+    </html>

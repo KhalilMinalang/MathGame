@@ -1,0 +1,56 @@
+html {
+    height: 100%;
+    background: radial-gradient(circle, #fff, #ccc);
+    /* param: shape, #colorhex, #colorhex */
+}
+
+#container {
+    /*height: 300px;*/
+    height: 400px;
+    /*width: 400px;*/
+    /*width: 500px;*/
+    width: 550px;
+    background: #9DD2EA;
+    margin: 100px auto;
+    /*padding: 10px;*/
+    padding: 20px;/* We need the padding to create the space between the border and the element inside */
+    border-radius: 10px;
+    /*box-shadow: 4px 4px 0px 0px #009de4;*/
+    box-shadow: 0px 4px 0px 0px #009de4;
+    /* box-shadow: [horizontal-offset] [vertical-offset] [blur-radius] [OPTIONAL spread-radius] [color] */
+    position: relative; /* We need to do this before we give the absolute position to the scorebox, correct, and wrong. */
+}
+
+#score {
+    background-color: #F1FF92;
+    color: #888E5F;
+    /*padding: 5px;*/
+    /*padding: 10px;*/
+    padding: 11px;
+    position: absolute;
+    /*left: 400px;*/
+    left: 500px;
+    box-shadow: 0px 4px 0px #9da853;
+}
+
+#correct {
+    position: absolute;
+    /*left: 200px;*/
+    /*left: 250px;*/
+    left: 260px;
+    background-color: #42e252;
+    color: white;
+    padding: 11px;
+    display: none;
+}
+
+#wrong {
+    position: absolute;
+    /*left: 260px;*/
+    /*left: 100px;*/
+    left: 250px;
+    background-color: #de401a;
+    color: white;
+    padding: 11px;
+    display: none;
+}
